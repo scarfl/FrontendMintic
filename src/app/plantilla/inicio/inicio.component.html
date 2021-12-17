@@ -1,0 +1,158 @@
+
+<div class="container">
+  
+<br> 
+     
+
+  
+<form class="col s12">
+<div class="row">
+
+    <div class="input-field col s8">
+        <label for="txtDocumento">Documento</label>
+        <input class="form-control" id="txtDocumento" type="text" class="form-control" required>
+        <div class="invalid-feedback"> 
+            Ingrese su número de documento 
+        </div>
+    </div>
+
+
+    <div class="input-field col s2">
+        
+          <label>
+                <input id="cbDirectivo" type="checkbox" value="directivo" />
+                <span>Es admin </span>
+          </label>
+    </div>
+    
+    <div class="input-field col s2">
+          <label>
+              <input id="CCliente" type="checkbox" value="cliente" />
+              <span>Es Cliente </span>
+          </label>
+    </div>
+      
+   
+                 
+        
+         
+                
+    <div class="input-field col s6">
+      <label for="txtNombre">Nombre</label>
+        <input placeholder=" " id="txtNombre" type="text" required> 
+           <div class="invalid-feedback"> 
+              Ingrese su nombre.
+           </div>
+          
+    </div>
+                
+    <div class="input-field col s6">
+      <label for="txtApellido">Apellidos</label>
+        <input id="txtApellido" type="text" Required>
+            <div class="invalid-feedback"> 
+                Ingrese sus apellidos.
+              </div>
+          
+    </div> 
+
+
+
+    <div class="input-field col s3">
+      <label for="txtEdad">Edad</label>
+            <input id="txtEdad" type="text" required>
+           
+            <div class="invalid-feedback"> 
+              Ingresar Edad.
+            </div>  
+    </div>
+            
+    <div class="input-field col s3">
+            <label for="txttelefono">Teléfono</label>
+            <input id="txttelefono" type="text" required>
+            <div class="invalid-feedback"> 
+              Ingrese su número telefonico 
+              </div>
+    </div>
+              
+    <div class="input-field col s4">
+          <label for="txtemail">Email</label>
+                 <input id="txtemail" type="email" required>
+                <div class="invalid-feedback"> 
+                  Ingrese Email 
+                </div>
+     </div>
+
+     
+ <div class="col-12">
+      <button class="btn btn-primary" type="submit">Registrarse</button>
+    
+
+    </div>
+    <br><br>
+  
+</div>
+
+
+
+
+<script type="text/javascript">
+    
+  
+
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+'use strict'
+
+// Fetch all the forms we want to apply custom Bootstrap validation styles to
+var forms = document.querySelectorAll('.needs-validation')
+
+// Loop over them and prevent submission
+Array.prototype.slice.call(forms)
+  .forEach(function (form) {
+    form.addEventListener('submit', function (event) {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }else{
+        RegistrarPersona();
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+
+function RegistrarPersona(){
+  let Nombre = document.querySelector("#txtNombre").value;
+  let Apellido = document.querySelector("#txtApellido").value;
+  let telefono = document.querySelector("#txttelefono").value;
+  let edad = document.querySelector("#txtEdad").value;
+  let email = document.querySelector("#txtemail").value;
+  let NumeroDocumento = document.querySelector("#txtDocumento").value;
+  let admin = document.querySelectorAll('input[type=checkbox]').value; 
+  let cliente = document.querySelectorAll('input[type=checkbox]').value; 
+
+  let url ='http://localhost:3000/Personas';
+
+  let datos = {
+
+    nombre = Nombre,
+    Apellidos = Apellido,
+    telefono = telefono,
+    Email = email,
+    edad = edad,
+    FechaNacimiento =FechaNacimiento,
+    esadmin = admin,
+    esCLiente = cliente,
+    numeroDocumento = Documento,
+    
+
+  }
+}
+</script>">
+
+
+
+
+  
+
